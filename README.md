@@ -1,3 +1,8 @@
+<a href="https://park-passport.vercel.app/">
+  <img alt="Park Passport" align="center" src="https://park-passport.vercel.app/parkpassport.png">
+  <h1 align="center">Park Passport</h1>
+</a>
+
 # Park Passport
 
 Park Passport is a web application that allows users to retrieve helpful information about national parks before traveling there. Users can type in the name of a national park and retrieve information such as park hours, location, trails, and nearby attractions.
