@@ -3,9 +3,10 @@
   <h1 align="center">Park Passport</h1>
 </a>
 
-# Park Passport
+<p align="center">Park Passport is a web application that allows users to retrieve helpful information about national parks before traveling there. Users can type in the name of a national park and retrieve information such as park hours, location, trails, and nearby attractions.</p>
 
-Park Passport is a web application that allows users to retrieve helpful information about national parks before traveling there. Users can type in the name of a national park and retrieve information such as park hours, location, trails, and nearby attractions.
+
+> Live Link (Alpha Stage) [_here_](https://park-passport.vercel.app/)
 
 ## Technologies Used
 
