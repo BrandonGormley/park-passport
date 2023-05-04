@@ -34,7 +34,6 @@ export const SearchParks = () => {
             const data = await res.json();
             setActivePark(data.data[0]);
             setQuery('');
-            console.log(data.data[0]);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
