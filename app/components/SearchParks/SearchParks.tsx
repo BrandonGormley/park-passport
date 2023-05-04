@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { TiWeatherPartlySunny } from 'react-icons/ti';
-import { HiOutlineNewspaper, HiOutlineCurrencyDollar } from 'react-icons/Hi';
+import { HiOutlineNewspaper, HiOutlineCurrencyDollar } from 'react-icons/hi';
 import { GrMapLocation } from 'react-icons/gr';
 import Link from 'next/link';
 
