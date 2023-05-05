@@ -60,24 +60,35 @@ export const SearchParks = () => {
             </button>
             {activePark && (
                 <div className='flex w-full max-w-[1024px] flex-col items-center justify-center'>
-                    <h2 className='text-2xl font-bold text-gray-700'>
+                    <h2 className='mb-2 text-center text-3xl font-bold text-gray-700'>
                         {activePark.fullName}
                     </h2>
                     <div className='flex w-full flex-col flex-wrap md:flex-row'>
                         <div className='mb-4 flex w-full flex-col rounded-md bg-white p-4 shadow-md shadow-slate-300 md:mx-4 md:my-4 md:mb-0 md:w-[45%]'>
-                            <HiOutlineNewspaper className='h-8 w-8 text-gray-700' />
+                            <div className='mb-2 flex flex-row items-center justify-center border-b border-b-gray-200 pb-2'>
+                                <HiOutlineNewspaper className='h-8 w-8 text-gray-700' />
+                                <h3 className='ml-2 text-lg'>Description</h3>
+                            </div>
                             <p className='my-2 text-sm'>
                                 {activePark.description}
                             </p>
                         </div>
                         <div className='mb-4 flex w-full flex-col rounded-md bg-white p-4 shadow-md shadow-slate-300 md:mx-4 md:my-4 md:mb-0 md:w-[45%]'>
-                            <TiWeatherPartlySunny className='h-8 w-8 text-gray-700' />
+                            <div className='mb-2 flex flex-row items-center justify-center border-b border-b-gray-200 pb-2'>
+                                <TiWeatherPartlySunny className='h-8 w-8 text-gray-700' />
+                                <h3 className='ml-2 text-lg'>Weather</h3>
+                            </div>
+
                             <p className='my-2 text-sm'>
                                 {activePark.weatherInfo}
                             </p>
                         </div>
                         <div className='mb-4 flex w-full flex-col rounded-md bg-white p-4 shadow-md shadow-slate-300 md:mx-4 md:my-4 md:mb-0 md:w-[45%]'>
-                            <HiOutlineCurrencyDollar className='h-8 w-8 text-gray-700' />
+                            <div className='mb-2 flex flex-row items-center justify-center border-b border-b-gray-200 pb-2'>
+                                <HiOutlineCurrencyDollar className='h-8 w-8 text-gray-700' />
+                                <h3 className='ml-2 text-lg'>Entrance Fees</h3>
+                            </div>
+
                             {activePark.entranceFees.map((fee) => {
                                 return (
                                     <div
@@ -94,13 +105,17 @@ export const SearchParks = () => {
                             })}
                         </div>
                         <div className='mb-4 flex w-full flex-col rounded-md bg-white p-4 shadow-md shadow-slate-300 md:mx-4 md:my-4 md:mb-0 md:w-[45%]'>
-                            <GrMapLocation className='h-8 w-8 text-gray-700' />
+                            <div className='mb-2 flex flex-row items-center justify-center border-b border-b-gray-200 pb-2'>
+                                <GrMapLocation className='h-8 w-8 text-gray-700' />
+                                <h3 className='ml-2 text-lg'>Directions</h3>
+                            </div>
+
                             <Link
-                                className='my-2 inline-block w-[30%] underline'
+                                className='my-2 inline-block w-[40%] underline'
                                 href={`${activePark.directionsUrl}`}
                                 target='_blank'
                             >
-                                Directions &#8250;
+                                Click for directions
                             </Link>
                         </div>
                     </div>
