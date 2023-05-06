@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { UserCircleIcon } from '@heroicons/react/24/outline';
+import { FaUserCircle } from 'react-icons/fa';
 
 export const Header = () => {
     return (
@@ -16,7 +16,7 @@ export const Header = () => {
             </div>
             <nav className='flex flex-row items-center justify-center'>
                 <Link href={'/'}>
-                    <UserCircleIcon className='h-8 w-8' />
+                    <FaUserCircle className='h-6 w-6 rounded-[50%] bg-white' />
                 </Link>
             </nav>
         </header>
