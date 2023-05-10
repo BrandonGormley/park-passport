@@ -3,6 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import Providers from './components/Providers/Provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,11 +21,13 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body
-                className={`${inter.className} bg-gradient-to-l from-green-100 via-white to-blue-100`}
+                className={`${inter.className} bg-gradient-to-l from-green-100 via-white to-blue-100 dark:from-slate-800 dark:to-slate-900`}
             >
-                <Header />
-                {children}
-                <Footer />
+                <Providers>
+                    <Header />
+                    {children}
+                    <Footer />
+                </Providers>
                 <Analytics />
             </body>
         </html>
