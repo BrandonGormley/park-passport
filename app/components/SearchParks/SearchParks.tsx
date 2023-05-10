@@ -33,7 +33,7 @@ export const SearchParks = () => {
                 working on fix as of 05/04/23
             </p>
             <button
-                className='my-8 rounded-md bg-blue-500 px-4 py-2 font-bold text-white shadow-md transition-all duration-200 hover:bg-blue-600'
+                className='my-8 rounded-md bg-blue-500 px-4 py-2 font-bold text-white shadow-md transition-all duration-200 hover:bg-blue-600 dark:border dark:border-white dark:bg-transparent dark:hover:bg-white dark:hover:text-slate-900'
                 onClick={searchParks}
             >
                 Search Park
