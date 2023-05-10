@@ -8,6 +8,12 @@ type Activity = {
     name: String;
 };
 
+type Image = {
+    url: String;
+    altText: String;
+    credit: String;
+};
+
 export type Park = {
     fullName: String;
     description: String;
@@ -15,4 +21,5 @@ export type Park = {
     directionsUrl: String;
     entranceFees: EntranceFee[];
     activities: Activity[];
+    images: Image[];
 };
