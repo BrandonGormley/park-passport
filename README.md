@@ -37,6 +37,6 @@ If you'd like to contribute to Park Passport, please follow these steps:
 1. Fork this repository.
 2. Create a new branch for your feature: `git checkout -b my-feature`
 3. Implement your feature.
-4. Commit your changes: `git commit -am "Added my feature"`
+4. Commit your changes: `git commit -m "Added my feature"`
 5. Push to the branch: `git push origin my-feature`
 6. Create a new pull request.
