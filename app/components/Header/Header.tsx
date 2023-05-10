@@ -30,7 +30,7 @@ export const Header = () => {
                     }
                     className='mx-2 rounded-md border border-black p-1 hover:bg-slate-800  hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-slate-900'
                 >
-                    {theme === 'light' ? <BsSun /> : <BsMoon />}
+                    {theme === 'light' ? <BsMoon /> : <BsSun />}
                 </button>
             </nav>
         </header>
