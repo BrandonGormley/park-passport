@@ -11,6 +11,17 @@ export const metadata = {
     title: 'Park Passport - Start exploring today!',
     description:
         'Discover national parks before you go with Park Passport, a web app built using NextJS, React, and other modern technologies. Retrieve important park information, upvote or like your favorite parks, and access it all in one place. Start planning your next adventure today!',
+    openGraph: {
+        images: [
+            {
+                url: 'https:https://park-passport.vercel.app/api/og',
+                width: 1920,
+                height: 1080,
+            },
+        ],
+        locale: 'en-US',
+        type: 'website',
+    },
 };
 
 export default function RootLayout({
