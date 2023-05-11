@@ -14,9 +14,7 @@ export const metadata = {
     openGraph: {
         images: [
             {
-                url: 'https://park-passport.vercel.app/api/og',
-                width: 1920,
-                height: 1080,
+                url: 'https://park-passport.vercel.app/banner.jpg',
             },
         ],
         locale: 'en-US',
