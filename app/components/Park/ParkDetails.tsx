@@ -10,7 +10,7 @@ type ParkDetailsProps = {
     park: Park;
 };
 
-export const ParkDetails: React.FC<ParkDetailsProps> = ({ park }) => {
+export default function ParkDetails({ park }: ParkDetailsProps) {
     return (
         <div className='flex w-full max-w-[1024px] flex-col items-center justify-center'>
             <h2 className='mb-2 text-center text-3xl font-bold text-gray-700 dark:text-white'>
@@ -49,13 +49,9 @@ export const ParkDetails: React.FC<ParkDetailsProps> = ({ park }) => {
                         <h3 className='ml-2 text-lg'>Entrance Fees</h3>
                     </div>
 
-                    {park.entranceFees.map((fee) => {
+                    {park.entranceFees.map((fee, index) => {
                         return (
-                            <div
-                                className='flex flex-col'
-                                // @ts-ignore
-                                key={fee.title}
-                            >
+                            <div className='flex flex-col' key={index}>
                                 <p className='font-bold text-gray-800 dark:text-white'>
                                     ${fee.cost}:
                                 </p>
@@ -85,15 +81,12 @@ export const ParkDetails: React.FC<ParkDetailsProps> = ({ park }) => {
                     </div>
 
                     <p>
-                        {park.activities.map((activity) => {
-                            return (
-                                // @ts-ignore
-                                <span key={activity.id}>{activity.name}, </span>
-                            );
+                        {park.activities.map((activity, index) => {
+                            return <span key={index}>{activity.name}, </span>;
                         })}
                     </p>
                 </div>
             </div>
         </div>
     );
-};
+}

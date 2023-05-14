@@ -5,9 +5,8 @@ import { FaUserCircle } from 'react-icons/fa';
 import { useTheme } from 'next-themes';
 import { BsSun, BsMoon } from 'react-icons/bs';
 
-export const Header = () => {
-    const { systemTheme, theme, setTheme } = useTheme();
-    const currentTheme = theme === 'system' ? systemTheme : theme;
+export default function Header() {
+    const { theme, setTheme } = useTheme();
 
     return (
         <header className='mx-auto flex w-full max-w-[1280px] items-center justify-between p-4'>
@@ -35,4 +34,4 @@ export const Header = () => {
             </nav>
         </header>
     );
-};
+}
