@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 
-export const Footer = () => {
+export default function Footer() {
     return (
         <div className='my-4 mt-auto flex flex-col items-center justify-center'>
             <div className='flex flex-row items-center'>
@@ -38,4 +38,4 @@ export const Footer = () => {
             </div>
         </div>
     );
-};
+}

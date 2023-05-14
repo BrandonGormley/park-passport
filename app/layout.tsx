@@ -1,9 +1,9 @@
 import { Analytics } from '@vercel/analytics/react';
-import './globals.css';
 import { Inter } from 'next/font/google';
-import { Header } from './components/Header/Header';
-import { Footer } from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Providers from './components/Providers/Provider';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
