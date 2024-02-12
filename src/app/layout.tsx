@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { rubik } from '@/app/lib/fonts';
 import './globals.css';
 
+import Header from './components/Header';
+
 export const metadata: Metadata = {
     metadataBase: new URL('https://park-passport.vercel.app/'),
     title: 'Park Passport - Start exploring today!',
@@ -25,7 +27,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body className={rubik.className}>{children}</body>
+            <body className={rubik.className}>
+                <Header />
+                {children}
+            </body>
         </html>
     );
 }
