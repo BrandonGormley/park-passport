@@ -1,42 +1,36 @@
-<a href="https://park-passport.vercel.app/">
-  <img alt="Park Passport" align="center" src="https://park-passport.vercel.app/banner.jpg">
-  <h1 align="center">Park Passport</h1>
-</a>
-
-<p align="center">Park Passport is a web application that allows users to retrieve helpful information about national parks before traveling there. Users can type in the name of a national park and retrieve information such as park hours, location, trails, and nearby attractions.</p>
-
-> Live Link (Alpha Stage) [_here_](https://park-passport.vercel.app/)
-
-## Technologies Used
-
-Park Passport is built using the following technologies:
-
--   NextJS: A React framework for building server-side rendered applications.
--   React: A JavaScript library for building user interfaces.
--   TailwindCSS: A utility-first CSS framework for building responsive web interfaces.
--   PostCSS: A tool for transforming CSS with JavaScript plugins.
--   TypeScript: A superset of JavaScript that adds optional static typing.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-To get started with Park Passport, follow these steps:
+First, run the development server:
 
-1. Clone this repository: `git clone https://github.com/brandongormley/park-passport.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Navigate to `http://localhost:3000` in your web browser.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Usage
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To use Park Passport, simply type in the name of a national park and press enter. The application will retrieve information about the park, including its location, hours, trails, and nearby attractions.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Contributing
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-If you'd like to contribute to Park Passport, please follow these steps:
+## Learn More
 
-1. Fork this repository.
-2. Create a new branch for your feature: `git checkout -b my-feature`
-3. Implement your feature.
-4. Commit your changes: `git commit -m "Added my feature"`
-5. Push to the branch: `git push origin my-feature`
-6. Create a new pull request.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
