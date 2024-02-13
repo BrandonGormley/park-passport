@@ -6,7 +6,7 @@ type state = {
     name: string;
 };
 
-export async function getData() {
+async function getData() {
     const res = await fetch(
         `https://developer.nps.gov/api/v1/parks?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );

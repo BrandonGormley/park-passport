@@ -1,5 +1,7 @@
 import { TiWeatherPartlySunny } from 'react-icons/ti';
 
+export const dynamic = 'force-dynamic';
+
 interface ParkDetailProps {
     params: {
         id: string;
@@ -7,7 +9,7 @@ interface ParkDetailProps {
     };
 }
 
-export async function getData(code: string, id: string) {
+async function getData(code: string, id: string) {
     const res = await fetch(
         `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );

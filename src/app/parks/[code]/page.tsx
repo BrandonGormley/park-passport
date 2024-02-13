@@ -1,12 +1,14 @@
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 interface ParkStateProps {
     params: {
         code: string;
     };
 }
 
-export async function getData(code: string) {
+async function getData(code: string) {
     const res = await fetch(
         `https://developer.nps.gov/api/v1/parks?stateCode=${code}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
