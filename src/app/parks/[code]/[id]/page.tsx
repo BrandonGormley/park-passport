@@ -31,6 +31,9 @@ export default async function page({ params }: ParkDetailProps) {
                         {park.states}
                     </span>
                 </h1>
+                <p className='text-gray-400 text-xs mt-2'>
+                    {park.latitude},{park.longitude}
+                </p>
 
                 <p className='text-gray-700 my-4'>{park.description}</p>
                 <p className='flex flex-row font-semibold my-2'>Weather:</p>
