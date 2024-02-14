@@ -6,7 +6,10 @@ export default function Home() {
             <section className='w-full mx-auto px-8 max-w-[1280px] mt-32'>
                 <div className='flex flex-col justify-center items-center lg:py-8'>
                     <h1 className='text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl xl:text-6xl text-gray-800 text-center'>
-                        Welcome to Park{' '}
+                        Welcome to{' '}
+                        <span className='bg-gradient-to-r from-amber-800 via-orange-700 to-amber-800 bg-clip-text text-transparent'>
+                            Park
+                        </span>{' '}
                         <span className='bg-gradient-to-r from-green-500 via-lime-500 to-green-500 bg-clip-text text-transparent'>
                             Passport
                         </span>
