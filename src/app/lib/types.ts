@@ -47,7 +47,7 @@ type Address = {
     line2: string;
 };
 
-type Image = {
+export type ParkImage = {
     credit: string;
     title: string;
     altText: string;
@@ -61,7 +61,7 @@ export type Park = {
     fullName: string;
     parkCode: string;
     description: string;
-    latitutde: string;
+    latitude: string;
     longitude: string;
     latLong: string;
     activities: Activity[];
@@ -77,7 +77,7 @@ export type Park = {
     directionsUrl: string;
     operatingHours: OperatingHour[];
     addresses: Address[];
-    images: Image[];
+    images: ParkImage[];
     weatherInfo: string;
     name: string;
     designation: string;
