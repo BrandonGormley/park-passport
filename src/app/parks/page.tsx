@@ -1,18 +1,6 @@
 import { states } from '@/app/lib/data';
 import Link from 'next/link';
-
-type state = {
-    code: string;
-    name: string;
-};
-
-async function getData() {
-    const res = await fetch(
-        `https://developer.nps.gov/api/v1/parks?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-    );
-    const data = await res.json();
-    return data;
-}
+import { state } from '@/app/lib/types';
 
 export default async function page() {
     return (
