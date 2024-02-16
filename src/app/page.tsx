@@ -16,9 +16,9 @@ export default function Home() {
                     </h1>
                     <p className='text-gray-500 my-6 lg:max-w-[75%] text-center'>
                         Discover national parks before you go with Park
-                        Passport. Retrieve important park information, upvote or
-                        like your favorite parks, and access it all in one
-                        place. Start planning your next adventure today!
+                        Passport. Retrieve important park information such as
+                        weather, pricing, directions, etc. and access it all in
+                        one place. Start planning your next adventure today!
                     </p>
                     <Link
                         className='bg-gray-800 text-white rounded-lg px-6 py-3 inline-block text-center hover:bg-gray-700 transition-all mx-auto'
