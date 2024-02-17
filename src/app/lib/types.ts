@@ -55,6 +55,18 @@ export type ParkImage = {
     url: string;
 };
 
+export type EntranceFee = {
+    cost: string;
+    description: string;
+    title: string;
+};
+
+export type EntrancePass = {
+    cost?: string;
+    description?: string;
+    title?: string;
+};
+
 export type Park = {
     id: string;
     url: string;
@@ -70,8 +82,8 @@ export type Park = {
         phoneNumbers: ContactPhoneNumber[];
         emailAddresses: ContactEmailAddress[];
     };
-    entrancefees: [];
-    entrancePasses: [];
+    entranceFees: EntranceFee[];
+    entrancePasses: [] | EntrancePass[];
     fees: [];
     directionsInfo: string;
     directionsUrl: string;
