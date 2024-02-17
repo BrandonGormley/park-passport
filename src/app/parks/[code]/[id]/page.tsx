@@ -1,4 +1,4 @@
-import { Park } from '@/app/lib/types';
+import { Park, EntranceFee } from '@/app/lib/types';
 import ParkName from '@/app/components/ui/park/ParkName';
 import ParkCoordinates from '@/app/components/ui/park/ParkCoordinates';
 import ParkDescription from '@/app/components/ui/park/ParkDescription';
@@ -28,7 +28,7 @@ export default async function page({ params }: ParkDetailProps) {
     const park: Park = data[0];
     return (
         <main className='min-h-screen'>
-            <section className='w-full mx-auto px-8 max-w-[1280px] mt-32'>
+            <section className='w-full mx-auto px-8 max-w-[1280px] mt-16'>
                 <ParkName parkName={park.fullName} parkStates={park.states} />
                 <ParkCoordinates
                     parkLongitude={park.longitude}
@@ -42,6 +42,28 @@ export default async function page({ params }: ParkDetailProps) {
                     parkDirectionsUrl={park.directionsUrl}
                 />
                 <ParkImages parkImages={park.images} />
+                <p className='flex flex-row font-semibold my-2'>
+                    Entrance Fees:
+                </p>
+                <ul>
+                    {park.entranceFees.length > 0 ? (
+                        park.entranceFees.map((entranceFee) => (
+                            <li key={entranceFee.title} className='my-1'>
+                                <p className='font-semibold text-sm'>
+                                    {entranceFee.title}
+                                </p>
+                                <p className='text-xs text-gray-600'>
+                                    ${entranceFee.cost}
+                                </p>
+                                <p className='text-xs text-gray-600'>
+                                    {entranceFee.description}
+                                </p>
+                            </li>
+                        ))
+                    ) : (
+                        <p>Entry is free</p>
+                    )}
+                </ul>
             </section>
         </main>
     );
