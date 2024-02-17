@@ -5,7 +5,7 @@ import { state } from '@/app/lib/types';
 export default async function page() {
     return (
         <main className='min-h-screen'>
-            <section className='w-full mx-auto px-8 max-w-[1280px] mt-32'>
+            <section className='w-full mx-auto px-8 max-w-[1280px] mt-16'>
                 <h1>Parks</h1>
                 <p>Please select a state to view:</p>
                 <ul className='my-4'>

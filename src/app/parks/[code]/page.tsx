@@ -22,7 +22,7 @@ export default async function page({ params }: ParkStateProps) {
 
     return (
         <main className='min-h-screen'>
-            <section className='w-full mx-auto px-8 max-w-[1280px] mt-32'>
+            <section className='w-full mx-auto px-8 max-w-[1280px] mt-16'>
                 <h1>National Parks for : {params.code.toUpperCase()}</h1>
                 <ul className='my-4'>
                     {data.map((park: Park) => (
