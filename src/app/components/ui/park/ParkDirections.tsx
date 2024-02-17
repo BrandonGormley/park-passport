@@ -9,7 +9,7 @@ export default function ParkDirections({
 }: ParkDirectionsProps) {
     return (
         <>
-            <p className='flex flex-row font-semibold my-2'>Drections:</p>
+            <p className='flex flex-row font-semibold my-2'>Directions:</p>
             <p className='text-gray-600 text-xs mt-2'>{parkDirectionsInfo}</p>
             <a
                 target='_blank'
