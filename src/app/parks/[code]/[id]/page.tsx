@@ -50,6 +50,7 @@ export default async function page({ params }: ParkDetailProps) {
                     {park.entranceFees.length > 0 ? (
                         park.entranceFees.map((entranceFee) => (
                             <ParkEntranceFee
+                                key={entranceFee.title}
                                 title={entranceFee.title}
                                 cost={entranceFee.cost}
                                 description={entranceFee.description}
