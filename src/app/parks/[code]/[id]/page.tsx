@@ -5,6 +5,7 @@ import ParkDescription from '@/app/components/ui/park/ParkDescription';
 import ParkWeather from '@/app/components/ui/park/ParkWeather';
 import ParkDirections from '@/app/components/ui/park/ParkDirections';
 import ParkImages from '@/app/components/ui/park/ParkImages';
+import ParkEntranceFee from '@/app/components/ui/park/ParkEntranceFee';
 
 export const dynamic = 'force-dynamic';
 
@@ -48,17 +49,11 @@ export default async function page({ params }: ParkDetailProps) {
                 <ul>
                     {park.entranceFees.length > 0 ? (
                         park.entranceFees.map((entranceFee) => (
-                            <li key={entranceFee.title} className='my-1'>
-                                <p className='font-semibold text-sm'>
-                                    {entranceFee.title}
-                                </p>
-                                <p className='text-xs text-gray-600'>
-                                    ${entranceFee.cost}
-                                </p>
-                                <p className='text-xs text-gray-600'>
-                                    {entranceFee.description}
-                                </p>
-                            </li>
+                            <ParkEntranceFee
+                                title={entranceFee.title}
+                                cost={entranceFee.cost}
+                                description={entranceFee.description}
+                            />
                         ))
                     ) : (
                         <p>Entry is free</p>
