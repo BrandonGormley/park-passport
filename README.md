@@ -1,5 +1,5 @@
 <a href="https://park-passport.vercel.app/">
-  <img alt="Park Passport" align="center" src="/readmebanner.jpg">
+  <img alt="Park Passport" align="center" src="https://park-passport.vercel.app//readmebanner.jpg">
   <h1 align="center">Park Passport</h1>
 </a>
 
