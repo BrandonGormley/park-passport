@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import { states } from '@/app/lib/data';
 import Link from 'next/link';
 import { state } from '@/app/lib/types';
+
+export const metadata: Metadata = {
+    title: 'Park Passport | States',
+    description:
+        'Unlock a world of exploration with our Park Passport app! Discover national monuments, parks, and historical landmarks in every state. Plan your next adventure with ease as you browse through comprehensive information on each destination. Start your journey today and uncover the beauty and history waiting to be explored across the nation.',
+};
 
 export default async function page() {
     return (
