@@ -1,11 +1,11 @@
-import { Park, EntranceFee } from '@/app/lib/types';
+import type { Metadata } from 'next';
+import { Park } from '@/app/lib/types';
 import ParkName from '@/app/components/ui/park/ParkName';
 import ParkCoordinates from '@/app/components/ui/park/ParkCoordinates';
 import ParkDescription from '@/app/components/ui/park/ParkDescription';
 import ParkWeather from '@/app/components/ui/park/ParkWeather';
 import ParkDirections from '@/app/components/ui/park/ParkDirections';
 import ParkImages from '@/app/components/ui/park/ParkImages';
-import ParkEntranceFee from '@/app/components/ui/park/ParkEntranceFee';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,6 +13,16 @@ interface ParkDetailProps {
     params: {
         id: string;
         code: string;
+    };
+}
+
+export async function generateMetadata({ params }: ParkDetailProps) {
+    const data = await getData(params.code, params.id);
+    const park: Park = data[0];
+
+    return {
+        title: `Park Passport | ${park.fullName}`,
+        description: `Immerse yourself in the allure of ${park.fullName} with our Park Passport app! Delve into the heart of nature as you explore trails, wildlife, and breathtaking vistas waiting to be uncovered. From historical insights to visitor tips, our app provides all the information you need to make the most of your visit. Start your adventure at ${park.fullName} today and experience the wonders of the great outdoors like never before.`,
     };
 }
 
@@ -49,12 +59,17 @@ export default async function page({ params }: ParkDetailProps) {
                 <ul>
                     {park.entranceFees.length > 0 ? (
                         park.entranceFees.map((entranceFee) => (
-                            <ParkEntranceFee
-                                key={entranceFee.title}
-                                title={entranceFee.title}
-                                cost={entranceFee.cost}
-                                description={entranceFee.description}
-                            />
+                            <li key={entranceFee.title} className='my-1'>
+                                <p className='font-semibold text-sm'>
+                                    {entranceFee.title}
+                                </p>
+                                <p className='text-xs text-gray-600'>
+                                    ${entranceFee.cost}
+                                </p>
+                                <p className='text-xs text-gray-600'>
+                                    {entranceFee.description}
+                                </p>
+                            </li>
                         ))
                     ) : (
                         <p>Entry is free</p>
