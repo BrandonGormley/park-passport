@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Park } from '@/app/lib/types';
 
@@ -6,6 +7,13 @@ export const dynamic = 'force-dynamic';
 interface ParkStateProps {
     params: {
         code: string;
+    };
+}
+
+export async function generateMetadata({ params }: ParkStateProps) {
+    return {
+        title: `Park Passport | ${params.code.toUpperCase()}`,
+        description: `Explore the natural wonders with our Park Passport app! Browse through a curated list of parks in ${params.code.toUpperCase()}, from sprawling landscapes to hidden gems, and uncover the beauty waiting to be discovered in your backyard. Whether you're seeking adventure or tranquility, our app provides detailed information to help you plan your next outdoor escapade. Start exploring parks today and let the adventure begin!`,
     };
 }
 
