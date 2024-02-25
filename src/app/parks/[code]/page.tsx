@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { Park } from '@/app/lib/types';
 
+export const dynamic = 'force-static';
+
 interface ParkStateProps {
     params: {
         code: string;
@@ -24,12 +26,7 @@ export async function generateStaticParams({ params }: ParkStateProps) {
 
 async function getData(code: string) {
     const res = await fetch(
-        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
-        {
-            next: {
-                revalidate: 0,
-            },
-        }
+        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     const data = await res.json();
     return data.data;

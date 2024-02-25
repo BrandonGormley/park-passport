@@ -6,6 +6,8 @@ import ParkWeather from '@/app/components/ui/park/ParkWeather';
 import ParkDirections from '@/app/components/ui/park/ParkDirections';
 import ParkImages from '@/app/components/ui/park/ParkImages';
 
+export const dynamic = 'force-static';
+
 interface ParkDetailProps {
     params: {
         id: string;
@@ -27,12 +29,7 @@ export async function generateStaticParams({
     params: { code, id },
 }: ParkDetailProps) {
     const res = await fetch(
-        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
-        {
-            next: {
-                revalidate: 0,
-            },
-        }
+        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     const data = await res.json();
 
@@ -43,12 +40,7 @@ export async function generateStaticParams({
 
 async function getData(code: string, id: string) {
     const res = await fetch(
-        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
-        {
-            next: {
-                revalidate: 0,
-            },
-        }
+        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     const data = await res.json();
     return data.data;
