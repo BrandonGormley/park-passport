@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { Park } from '@/app/lib/types';
 import ParkName from '@/app/components/ui/park/ParkName';
 import ParkCoordinates from '@/app/components/ui/park/ParkCoordinates';
@@ -6,8 +5,6 @@ import ParkDescription from '@/app/components/ui/park/ParkDescription';
 import ParkWeather from '@/app/components/ui/park/ParkWeather';
 import ParkDirections from '@/app/components/ui/park/ParkDirections';
 import ParkImages from '@/app/components/ui/park/ParkImages';
-
-export const dynamic = 'force-dynamic';
 
 interface ParkDetailProps {
     params: {
@@ -26,9 +23,32 @@ export async function generateMetadata({ params }: ParkDetailProps) {
     };
 }
 
+export async function generateStaticParams({
+    params: { code, id },
+}: ParkDetailProps) {
+    const res = await fetch(
+        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+        {
+            next: {
+                revalidate: 0,
+            },
+        }
+    );
+    const data = await res.json();
+
+    return data.data.map((park: Park) => ({
+        id: park.id,
+    }));
+}
+
 async function getData(code: string, id: string) {
     const res = await fetch(
-        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&q=${id}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+        {
+            next: {
+                revalidate: 0,
+            },
+        }
     );
     const data = await res.json();
     return data.data;
