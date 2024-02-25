@@ -1,8 +1,5 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Park } from '@/app/lib/types';
-
-export const dynamic = 'force-dynamic';
 
 interface ParkStateProps {
     params: {
@@ -17,9 +14,22 @@ export async function generateMetadata({ params }: ParkStateProps) {
     };
 }
 
+export async function generateStaticParams({ params }: ParkStateProps) {
+    const data: Park[] = await getData(params.code);
+
+    return data.map((park) => ({
+        id: park.id,
+    }));
+}
+
 async function getData(code: string) {
     const res = await fetch(
-        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+        `https://developer.nps.gov/api/v1/parks?stateCode=${code}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+        {
+            next: {
+                revalidate: 0,
+            },
+        }
     );
     const data = await res.json();
     return data.data;
