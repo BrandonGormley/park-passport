@@ -57,6 +57,10 @@ export default async function page({ params }: ParkDetailProps) {
                     parkLongitude={park.longitude}
                     parkLatitude={park.latitude}
                 />
+                <p className='text-gray-400 text-xs mt-2'>
+                    <strong className='text-sm'>Designation:</strong>{' '}
+                    {park.designation}
+                </p>
 
                 <ParkDescription parkDescription={park.description} />
                 <ParkWeather parkWeatherInfo={park.weatherInfo} />
