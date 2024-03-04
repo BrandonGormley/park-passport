@@ -64,7 +64,6 @@ export default async function page({ params }: ParkDetailProps) {
                     parkDirectionsInfo={park.directionsInfo}
                     parkDirectionsUrl={park.directionsUrl}
                 />
-                <ParkImages parkImages={park.images} />
                 <p className='flex flex-row font-semibold my-2'>
                     Entrance Fees:
                 </p>
@@ -87,6 +86,7 @@ export default async function page({ params }: ParkDetailProps) {
                         <p>Entry is free</p>
                     )}
                 </ul>
+                <ParkImages parkImages={park.images} />
             </section>
         </main>
     );
