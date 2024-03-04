@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { rubik } from '@/app/lib/fonts';
 import './globals.css';
@@ -25,6 +26,7 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body className={rubik.className}>
+                <SpeedInsights />
                 <Header />
                 {children}
             </body>
