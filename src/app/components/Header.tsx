@@ -18,11 +18,6 @@ export default function Header() {
                             Parks
                         </Link>
                     </li>
-                    <li className='mx-2'>
-                        <Link className='hover:text-gray-800' href={'/about'}>
-                            About
-                        </Link>
-                    </li>
                 </ul>
             </nav>
         </header>
