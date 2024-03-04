@@ -10,7 +10,8 @@ export default function ParkCoordinates({
     return (
         <>
             <p className='text-gray-400 text-xs mt-2'>
-                {parkLatitude},{parkLongitude}
+                <strong className='text-sm'>Lat, Long:</strong> {parkLatitude},{' '}
+                {parkLongitude}
             </p>
         </>
     );
