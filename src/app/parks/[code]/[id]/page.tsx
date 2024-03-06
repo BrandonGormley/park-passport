@@ -5,6 +5,9 @@ import ParkDescription from '@/app/components/ui/park/ParkDescription';
 import ParkWeather from '@/app/components/ui/park/ParkWeather';
 import ParkDirections from '@/app/components/ui/park/ParkDirections';
 import ParkImages from '@/app/components/ui/park/ParkImages';
+import ParkHours from '@/app/components/ui/park/ParkHours';
+import ParkEntranceFees from '@/app/components/ui/park/ParkEntranceFees';
+import ParkDesignation from '@/app/components/ui/park/ParkDesignation';
 
 export const dynamic = 'force-static';
 
@@ -57,90 +60,15 @@ export default async function page({ params }: ParkDetailProps) {
                     parkLongitude={park.longitude}
                     parkLatitude={park.latitude}
                 />
-                <p className='text-gray-400 text-xs mt-2'>
-                    <strong className='text-sm'>Designation:</strong>{' '}
-                    {park.designation}
-                </p>
-
+                <ParkDesignation parkDesignation={park.designation} />
                 <ParkDescription parkDescription={park.description} />
                 <ParkWeather parkWeatherInfo={park.weatherInfo} />
                 <ParkDirections
                     parkDirectionsInfo={park.directionsInfo}
                     parkDirectionsUrl={park.directionsUrl}
                 />
-                <p className='flex flex-row font-semibold my-2'>
-                    Operating Hours
-                </p>
-                <ul>
-                    {park.operatingHours.map((operatingHour) => (
-                        <div key={operatingHour.name}>
-                            <li className='text-sm'>
-                                Monday:{' '}
-                                <span className=''>
-                                    {operatingHour.standardHours.monday}
-                                </span>
-                            </li>
-                            <li className='text-sm'>
-                                Tuesday:{' '}
-                                <span>
-                                    {operatingHour.standardHours.tuesday}
-                                </span>
-                            </li>
-                            <li className='text-sm'>
-                                Wednesday:{' '}
-                                <span>
-                                    {operatingHour.standardHours.wednesday}
-                                </span>
-                            </li>
-                            <li className='text-sm'>
-                                Thursday:{' '}
-                                <span>
-                                    {operatingHour.standardHours.thursday}
-                                </span>
-                            </li>
-                            <li className='text-sm'>
-                                Friday:{' '}
-                                <span>
-                                    {operatingHour.standardHours.friday}
-                                </span>
-                            </li>
-                            <li className='text-sm'>
-                                Saturday:{' '}
-                                <span>
-                                    {operatingHour.standardHours.saturday}
-                                </span>
-                            </li>
-                            <li className='text-sm'>
-                                Sunday:{' '}
-                                <span>
-                                    {operatingHour.standardHours.sunday}
-                                </span>
-                            </li>
-                        </div>
-                    ))}
-                </ul>
-                <p className='flex flex-row font-semibold my-2'>
-                    Entrance Fees:
-                </p>
-                <ul>
-                    {park.entranceFees.length > 0 ? (
-                        park.entranceFees.map((entranceFee) => (
-                            <li key={entranceFee.title} className='my-1'>
-                                <p className='font-semibold text-sm'>
-                                    {entranceFee.title}
-                                </p>
-                                <p className='text-xs text-gray-600'>
-                                    ${entranceFee.cost}
-                                </p>
-                                <p className='text-xs text-gray-600'>
-                                    {entranceFee.description}
-                                </p>
-                            </li>
-                        ))
-                    ) : (
-                        <p>Entry is free</p>
-                    )}
-                </ul>
+                <ParkHours parkOperatingHours={park.operatingHours} />
+                <ParkEntranceFees parkEntranceFees={park.entranceFees} />
                 <ParkImages parkImages={park.images} />
             </section>
         </main>
