@@ -20,7 +20,7 @@ type ContactEmailAddress = {
     emailAddress: string;
 };
 
-type OperatingHour = {
+export type OperatingHour = {
     exceptions: [];
     description: string;
     standardHours: {
