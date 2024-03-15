@@ -67,6 +67,25 @@ export default async function page({ params }: ParkDetailProps) {
                     parkDirectionsInfo={park.directionsInfo}
                     parkDirectionsUrl={park.directionsUrl}
                 />
+                <>
+                    <p className='flex flex-row font-semibold my-2'>
+                        Address/Contact:
+                    </p>
+                    <p className='text-gray-600 text-xs mt-2'>
+                        {park.addresses[0].line1}
+                    </p>
+                    <p className='text-gray-600 text-xs'>
+                        {park.addresses[0].city},{' '}
+                        {park.addresses[0].countryCode},{' '}
+                        {park.addresses[0].postalCode}
+                    </p>
+                    <p className='text-gray-600 text-xs'>
+                        Phone: {park.contacts.phoneNumbers[0].phoneNumber}
+                    </p>
+                    <p className='text-gray-600 text-xs'>
+                        Email: {park.contacts.emailAddresses[0].emailAddress}
+                    </p>
+                </>
                 <ParkHours parkOperatingHours={park.operatingHours} />
                 <ParkEntranceFees parkEntranceFees={park.entranceFees} />
                 <ParkImages parkImages={park.images} />
