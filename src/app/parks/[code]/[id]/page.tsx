@@ -86,7 +86,7 @@ export default async function page({ params }: ParkDetailProps) {
                         Email: {park.contacts.emailAddresses[0].emailAddress}
                     </p>
                 </>
-                <ParkHours parkOperatingHours={park.operatingHours} />
+                {/* <ParkHours parkOperatingHours={park.operatingHours} /> */}
                 <ParkEntranceFees parkEntranceFees={park.entranceFees} />
                 <ParkImages parkImages={park.images} />
             </section>
