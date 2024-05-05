@@ -80,10 +80,16 @@ export default async function page({ params }: ParkDetailProps) {
                         {park.addresses[0].postalCode}
                     </p>
                     <p className='text-gray-600 text-xs'>
-                        Phone: {park.contacts.phoneNumbers[0].phoneNumber}
+                        Phone:{' '}
+                        {park.contacts.phoneNumbers.length > 0
+                            ? park.contacts.phoneNumbers[0].phoneNumber
+                            : 'N/A'}
                     </p>
                     <p className='text-gray-600 text-xs'>
-                        Email: {park.contacts.emailAddresses[0].emailAddress}
+                        Email:{' '}
+                        {park.contacts.emailAddresses.length > 0
+                            ? park.contacts.emailAddresses[0].emailAddress
+                            : 'N/A'}
                     </p>
                 </>
                 {/* *BUG* Hours are not rendering as they should */}
