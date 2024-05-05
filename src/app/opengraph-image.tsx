@@ -1,6 +1,8 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
+export const alt =
+    'Parkpassport - National Park information all in your pocket with easy glance';
 
 export default async function OG() {
     return new ImageResponse(
