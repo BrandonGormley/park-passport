@@ -5,7 +5,7 @@
 
 <p align="center">Discover national parks before you go with Park Passport. Retrieve important park information such as weather, pricing, directions, etc. and access it all in one place. Start planning your next adventure today!</p>
 
-> Live Link (Alpha Stage) [_here_](https://park-passport.vercel.app/)
+> Live Link [_here_](https://park-passport.vercel.app/)
 
 ## Technologies Used
 
