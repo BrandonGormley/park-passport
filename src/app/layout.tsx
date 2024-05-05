@@ -1,4 +1,5 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { rubik } from '@/app/lib/fonts';
 import './globals.css';
@@ -29,6 +30,7 @@ export default function RootLayout({
                 <SpeedInsights />
                 <Header />
                 {children}
+                <Analytics />
             </body>
         </html>
     );
